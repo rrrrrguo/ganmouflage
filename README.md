@@ -3,7 +3,7 @@ Rui Guo<sup>1</sup> Jasmine Collins<sup>2</sup> Oscar de Lima<sup>1</sup> Andrew
 
 <sup>1</sup>University of Michigan <sup>2</sup>UC Berkeley
 
-Teaser Image!!!!
+![](method_v8.pdf)
 
 This repository includes codes for the paper: **GANmouflage: 3D Object Nondetection with Texture Fields**. arXiv: 
 
