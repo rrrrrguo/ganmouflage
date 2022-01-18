@@ -3,7 +3,7 @@ Rui Guo<sup>1</sup> Jasmine Collins<sup>2</sup> Oscar de Lima<sup>1</sup> Andrew
 
 <sup>1</sup>University of Michigan <sup>2</sup>UC Berkeley
 
-![](method_v8.pdf)
+![](teaser_github.PNG)
 
 This repository includes codes for the paper: **GANmouflage: 3D Object Nondetection with Texture Fields**. arXiv: 
 
@@ -21,7 +21,7 @@ sh ./env.sh
     python get_num_views.py
     ```
 
--   Animal shapes can be downloaded from LINK. Animal shapes are collected from [SMAL](https://smal.is.tue.mpg.de/). We normalize the size of animals and flipped y-axis to accomodate to our axis definition. Download the data and unzip data into the folder outside the code repository. Make sure animal shape data is in `../fake_animals_v4/`
+-   Animal shapes can be downloaded from [link](https://drive.google.com/file/d/1gZJgqx4Lwp--oHAJQ3ZCwpWZHQEjncvO/view?usp=sharing). Animal shapes are collected from [SMAL](https://smal.is.tue.mpg.de/). We normalize the size of animals and flipped y-axis to accomodate to our axis definition. Download the data and unzip data into the folder outside the code repository. Make sure animal shape data is in `../fake_animals_v4/`
 
 Or directly run
 ```
