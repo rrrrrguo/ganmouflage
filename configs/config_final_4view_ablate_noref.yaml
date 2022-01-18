@@ -1,0 +1,83 @@
+data:
+  fake_cube: True
+  animals: 
+    data_dir: "../fake_animals_v4/"
+  same_views: False
+  scene:
+    single_scene: True
+    scene_name: scene1
+    distance_to_cube: 3
+    scene_folder: ../camo-data/
+    n_views_ref: 4
+    n_views_sup: 2
+    n_views_val: 1
+    target_size: [384,576]
+    cube_scale: 0.8
+    val_reserve_number: 3
+  train_cube_scale_range: [0.5,1.5]
+  
+  shape:
+    train_rot_limit: [30,180,30]
+
+model:
+  args:
+    cat_relative_depth: False
+    cat_surface_normals: True
+
+  decoder:
+    x_dim: 3
+    embedder: fixed_sincos
+    pe_dim: 128 #positional embedding dim, valid for learnable positional embedding
+    z_dim: 230
+    hidden_dim_1: 256
+    hidden_dim_2: 128
+    n_layers_stage1: 3
+    n_layers_stage2: 3
+
+
+  image_encoder:
+    type: resnet18unethigh
+    args:
+      normalize: True
+
+  discriminator:
+    #input_size: 192
+    nh: 64
+    norm: instance
+
+training:
+  batch_size: 2
+  multi_gpu: True
+  model_selection_metric: null
+  model_selection_mode: maximize
+  print_every: 25
+  visualize_every: 500
+  checkpoint_every: 5000
+  validate_every: -1
+  backup_every: 5000
+  #gradient_penalties_reg: 10.
+  lr_warmup: 200
+  lr_step: [10000000000000]
+  max_grad_norm: 5
+  max_epoch: 50
+  gamma: 0.2
+  num_workers: 4
+
+  lr_g: 0.0002
+  lr_d: 0.0001
+  betas: [0.5,0.99]
+  w_pix_ren: 1
+  w_pix_ref: 0
+  w_gan_ren: 0.5
+  w_gan_ref: 0
+
+  pix_ren_type: perceptual
+  pix_ref_type: perceptual
+  gan_type: standard
+
+  lambda_gp: 10
+  update_g_every: 1
+
+  crop_size: 128
+  crop_transform: True
+  
